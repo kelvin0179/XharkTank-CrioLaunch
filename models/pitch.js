@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { normalize } = require('path');
 
 const pitchSchema = new mongoose.Schema({
     entrepreneur: {
@@ -27,13 +26,5 @@ const pitchSchema = new mongoose.Schema({
     },
 });
 
-// pitchSchema.method('toClient', function () {
-//     var obj = this.toObject();
 
-//     //Rename fields
-//     obj.id = obj._id;
-//     delete obj._id;
-
-//     return obj;
-// });
 module.exports = mongoose.model('Pitch', pitchSchema);
