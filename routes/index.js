@@ -85,11 +85,11 @@ router.get("/pitches/:pitch_id", (req, res) => {
                 }
             })
             .catch((err) => {
-                console.log(err);
+                res.status(404).send("Not Found");
             });
     }
     catch {
-        res.status(500).send("Internal Server Error");
+        res.status(404).send("Not Found");
     }
 })
 
@@ -102,7 +102,7 @@ router.post("/pitches", (req, res) => {
                 });
             })
             .catch(() => {
-                res.status(400).send("Invalid Request Body");
+                res.status(400).send("Invalid Body Request");
             });
     }
     catch {
@@ -129,10 +129,13 @@ router.post("/pitches/:pitch_id/makeOffer", (req, res) => {
                             res.status(400).send("Invalid Request Body");
                         });
                 }
+            })
+            .catch(() => {
+                res.status(404).send("Not Found");
             });
     }
     catch {
-        res.status(500).send("Internal Server Error");
+        res.status(404).send("Not Found");
     }
 });
 
