@@ -32,7 +32,7 @@ router.get("/pitches", (req, res) => {
                     }
                 }
             }
-        ]).sort({ _id: -1 })
+        ]).sort({ id: -1 })
             .then((data) => {
                 res.status(200).json(data);
             })
@@ -75,7 +75,7 @@ router.get("/pitches/:pitch_id", (req, res) => {
                     }
                 }
             }
-        ]).sort({ _id: -1 })
+        ]).sort({ id: -1 })
             .then((data) => {
                 if (data.length > 0) {
                     res.status(200).json(data[0]);
