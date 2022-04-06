@@ -32,9 +32,9 @@ router.get("/pitches", (req, res) => {
                     }
                 }
             }
-        ])
+        ]).sort({ _id: -1 })
             .then((data) => {
-                res.status(200).send(data);
+                res.status(200).json(data);
             })
             .catch((err) => {
                 console.log(err);
@@ -75,10 +75,10 @@ router.get("/pitches/:pitch_id", (req, res) => {
                     }
                 }
             }
-        ])
+        ]).sort({ _id: -1 })
             .then((data) => {
                 if (data.length > 0) {
-                    res.status(200).send(data);
+                    res.status(200).json(data[0]);
                 }
                 else {
                     res.status(404).send("Not Found");
