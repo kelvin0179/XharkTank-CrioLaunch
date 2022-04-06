@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
     try {
-        const connect = await mongoose.connect(process.env.ATLAS_URI, {
+        const connect = await mongoose.connect("mongodb://localhost/Tank", {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
