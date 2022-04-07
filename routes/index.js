@@ -5,6 +5,9 @@ const Pitch = require("../models/pitch");
 const Invest = require("../models/investor");
 const ObjectId = mongoose.Types.ObjectId;
 
+router.get("/", (req, res) => {
+    res.send("Hello! Client , Welcome to Mohit's Xharktank Server");
+})
 router.get("/pitches", (req, res) => {
     try {
         Pitch.aggregate([
